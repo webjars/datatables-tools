@@ -1,4 +1,4 @@
-webjars-holderjs
+datatables-tools
 ================
 
 WebJar for http://datatables.net/ TableTools
