@@ -55,7 +55,8 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>RELEASE_2_1_5</upstream.version>
+        <upstream.version>2.1.5</upstream.version>
+        <upstream.tag>RELEASE_2_1_5</upstream.tag>
         <upstream.url>https://github.com/DataTables/TableTools/archive/</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
@@ -74,7 +75,7 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>${upstream.version}.zip</fromFile>
+                            <fromFile>${upstream.tag}.zip</fromFile>
                             <toFile>${project.build.directory}/${project.artifactId}.zip</toFile>
                         </configuration>
                     </execution>
@@ -94,7 +95,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/TableTools-${upstream.version}">
+                                    <fileset dir="${project.build.directory}/TableTools-${upstream.tag}">
                                         <include name="media/js/**" />
                                         <include name="media/css/*" />
                                         <include name="media/images/*.png" />
@@ -112,12 +113,6 @@
                 <version>2.3.2</version>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <targetPath>${destDir}</targetPath>
-            </resource>
-        </resources>
     </build>
 
 </project>
