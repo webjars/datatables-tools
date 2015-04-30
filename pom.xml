@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>datatables-tools</artifactId>
-    <version>2.2.4-SNAPSHOT</version>
+    <version>2.2.4</version>
 
     <name>datatables-tools</name>
     <description>WebJar for DataTables Tools</description>
@@ -42,7 +42,7 @@
         <url>http://github.com/webjars/datatables-tools</url>
         <connection>scm:git:https://github.com/webjars/datatables-tools.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/datatables-tools.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>datatables-tools-2.2.4</tag>
     </scm>
     
     <dependencies>
@@ -91,15 +91,15 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
                                     <fileset dir="${project.build.directory}/TableTools-${upstream.tag}">
-                                        <include name="media/js/**"/>
-                                        <include name="media/css/*"/>
-                                        <include name="media/images/*.png"/>
-                                        <include name="media/swf/*.swf"/>
+                                        <include name="media/js/**" />
+                                        <include name="media/css/*" />
+                                        <include name="media/images/*.png" />
+                                        <include name="media/swf/*.swf" />
                                     </fileset>
                                 </move>
                             </target>
